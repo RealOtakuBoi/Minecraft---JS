@@ -53,3 +53,14 @@ body {
 .cursor{
   color: #7c767641
 }
+
+
+.texture-selector{
+  transform: scale(5);
+  transition: 0.6s;
+}
+
+.texture-selector img.active{
+  opacity: 1;
+  border: 1px solid black;
+}
