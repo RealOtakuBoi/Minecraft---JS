@@ -5,4 +5,4 @@ It inspired from a very early build of Minecraft when it was in Alpha
 
 
 
-## Live Link : 
+## Live Link : https://khodo-bnao.netlify.app/
