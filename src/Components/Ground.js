@@ -2,6 +2,7 @@ import React from 'react'
 import { usePlane } from '@react-three/cannon'
 import {groundTexture} from '../images/Textures'
 import { NearestFilter, RepeatWrapping } from 'three'
+import { useStore } from '../Hooks/useStore'
 
 
 
@@ -16,9 +17,21 @@ const Ground = () => {
   groundTexture.repeat.set(100 , 100)
 
 
+  const [ addCube ] = useStore((state) => [state.addCube])
+
+
   return(
     <mesh
-    ref={ref}>
+    ref={ref}
+    
+    onClick ={(e) => {
+      e.stopPropagation()
+      const[x,y,z] = Object.values(e.point).map(val => Math.ceil(val))
+      addCube(x,y,z)
+    }}
+    
+    
+    >
         <planeBufferGeometry attach = 'geometry' args ={[100, 100]} />
         <meshStandardMaterial attach='material' map={groundTexture} />
     </mesh>
